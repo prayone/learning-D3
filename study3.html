@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择、插入、删除元素</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="UTF-8"></script>
+</head>
+<body>
+	<p>Apple</p>
+	<p id="p2" class="myclass">Pear</p>
+	<p class="myclass">Banana</p>
+	<script>
+		var body=d3.select("body")
+		//选择第一个p元素
+		var p1=body.select("p");
+		p1.style("color","red");
+		//选择全部p元素
+		var p=body.selectAll("p");
+		p.style("color","pink");
+		//选择第二个p元素
+		var p2=body.select("#p2")
+		p2.style("color","green");
+		//选择后两个p元素
+		var p2s=body.selectAll(".myclass")
+		p2s.style("color","blue");
+
+		//在前面插入元素
+		body.insert("div","#p2").text("新添加的div")
+		//在后面插入元素
+		body.append("p").text("新添加的div")
+		//移除元素
+		var pc=body.select("#p2");
+		pc.remove();
+	</script>
+</body>
+</html>

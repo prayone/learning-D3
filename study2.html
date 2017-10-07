@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>将数据绑定到DOM上</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="UTF-8"></script>
+</head>
+<body>
+	<p>apple</p>
+	<p>pear</p>
+	<p>banana</p>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		var str="chaina";
+		var body=d3.select("body");
+		var  p=body.selectAll("p");
+		p.datum(str);
+		p.text(function(d,i){
+			return "第"+i+"个元素绑定的数据是"+d;
+		})
+
+		var arr=["I like dogs!","I like pigs!","I like cats!"]
+		var div=body.selectAll("div");
+		div.data(arr).text(function(d,i){
+			return d;
+		})
+	</script>
+</body>
+</html>

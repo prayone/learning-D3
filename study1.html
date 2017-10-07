@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="UTF-8"></script>
+</head>
+<body>
+	<p>hello world</p>
+	<p>hello world</p>
+	<script>
+		d3.select("body").selectAll("p").text("这是改变后的内容！")
+		//选择<body>中所有的<p>，其文本内容为 www.ourd3js.com，选择集保存在变量 p 中
+		var p = d3.select("body").selectAll("p").text("www.ourd3js.com");
+		p.style("color","red").style("font-size","72px");
+		// 在 D3 中，用于选择元素的函数有两个：
+		// d3.select()：是选择所有指定元素的第一个
+		// d3.selectAll()：是选择指定元素的全部
+	</script>
+</body>
+</html>
